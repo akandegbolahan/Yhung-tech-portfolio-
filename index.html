@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/img/fav.jpg">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- =====BOX ICONS===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Akande Gbolahan</title>
+</head>
+
+<body>
+    <!--===== HEADER =====-->
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="#" class="nav__logo">Gbolahan</a>
+            </div>
+
+    <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+            <li class="nav__item"><a href="./index.html" class="nav__link active-link">Home</a></li>
+            <li class="nav__item"><a href="./About.html" class="nav__link">About</a></li>
+            <li class="nav__item"><a href="./work.html" class="nav__link">Portfolio</a></li>
+            <li class="nav__item"><a href="./contact.html" class="nav__link">Contact</a></li>
+            <li class="nav__item"><a href="./blog.html" class="nav__link">Blog</a></li>
+        </ul>
+    </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main">
+        <!--===== HOME =====-->
+        <div class="btn">
+            <section class="home bd-grid" id="home">
+                <div class="home__data">
+                    <h1 class="home__title">Hello,<br>I'm <span class="home__title-color">Gbolahan</span><br> a Web
+                        Developer</h1>
+
+                    <a href="./About.html" class="button">Connect With Me</a>
+                </div>
+
+
+                <div class="home__social">
+                    <a href="https://www.linkedin.com/in/gbolahanakandecom/" class="home__social-icon"
+                        target="_blank"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://www.instagram.com/randy_margret101/ " class="home__social-icon" target="_blank"><i
+                            class='bx bxl-instagram'></i></a>
+                    <a href="https://github.com/akandegbolahan" class="home__social-icon" target="_blank"><i
+                            class='bx bxl-github'></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61555331213596&mibextid=LQQJ4d"
+                        class="home__social-icon" target="_blank"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://twitter.com/AkandeGbol17309" class="home__social-icon" target="_blank"><i
+                            class='bx bxl-twitter'></i></a>
+                </div>
+        </div>
+
+        </section>
+</main>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzNZT1YuQjwJcL5S9gt1eX6nH1OmSQWu0RYmO7GvZtDgX_LqP9x9xVi3vZkAMwRqmjBog/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => {
+                msg.innerHTML = "Message Sent Successfully"
+                setTimeout(function () {
+                    msg.innerHTML = ""
+                }, 5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+    })
+</script>
+<!--===== SCROLL REVEAL =====-->
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<!--===== MAIN JS =====-->
+<script src="js/main.js"></script>
+</body>
+
+</html>
